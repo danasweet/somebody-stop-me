@@ -8,7 +8,7 @@ class BusStopController < ApplicationController
     bus_num = obj.split(',')[1]
 		response = Geokit::Geocoders::MultiGeocoder.do_geocode(address)
     respond_to do |format|
-      format.html { return BusStop.find_closest_by_coord_and_bus(response.longitude,response.latitude,bus_num) }
+      format.html { }
       format.json  { render :json => BusStop.find_closest_by_coord_and_bus(response.longitude,response.latitude,bus_num) }
       format.xml  { }
     end
