@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   post 'busstops/api' => 'bus_stop#api'
 
+  root 'welcome#index'
+
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
