@@ -3,8 +3,10 @@ class BusStopController < ApplicationController
 
   def api
     obj = params["data"]
-    address = obj.split(',')[0]
-    bus_num = obj.split(',')[1]
+    p params["data"]
+    address = obj.split("','")[0]
+    bus_num = obj.split("','")[1]
+    bus_num = bus_num[0..-2]
     response = Geokit::Geocoders::MultiGeocoder.do_geocode(address)
     respond_to do |format|
       format.html { }
